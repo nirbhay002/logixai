@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg-dark:      #09090B;
+  --bg-card:      #18181B;
+  --accent:       #F97316;
+  --accent-light: #FB923C;
+  --accent-glow:  rgba(249,115,22,0.35);
+  --border:       rgba(255,255,255,0.08);
+  --text-muted:   #A1A1AA;
+  --radius:       0.75rem;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-dark);
+  color: #FAFAFA;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── Scroll-reveal utility ──────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ─── Animated X ─────────────────────────────────────────── */
+@keyframes x-glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 12px var(--accent-glow)) drop-shadow(0 0 28px var(--accent-glow)); }
+  50%       { filter: drop-shadow(0 0 22px rgba(249,115,22,0.6)) drop-shadow(0 0 48px rgba(249,115,22,0.3)); }
+}
+@keyframes x-rotate {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(3deg) scale(1.02); }
+  75%  { transform: rotate(-3deg) scale(1.02); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+@keyframes x-draw {
+  from { stroke-dashoffset: 400; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(90px) rotate(360deg); }
+}
+
+.x-svg {
+  animation: x-glow-pulse 3s ease-in-out infinite, x-rotate 6s ease-in-out infinite;
+  transform-origin: center;
+}
+.x-line {
+  stroke-dasharray: 400;
+  animation: x-draw 1.2s ease forwards;
+}
+.x-line-2 { animation-delay: 0.3s; }
+
+.orbit-dot {
+  animation: orbit 4s linear infinite;
+  transform-origin: center;
+}
+.orbit-dot-2 {
+  animation: orbit-reverse 6s linear infinite;
+  transform-origin: center;
+}
+
+/* ─── Hero grid pattern ──────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Gradient text ──────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #F97316 0%, #FBBF24 60%, #F97316 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ─── Glowing button ─────────────────────────────────────── */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-glow:hover::before { opacity: 1; }
+.btn-glow:hover { box-shadow: 0 0 24px var(--accent-glow), 0 4px 16px rgba(0,0,0,0.4); transform: translateY(-2px); }
+
+/* ─── Card hover lift ────────────────────────────────────── */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+  border-color: rgba(249,115,22,0.35);
+}
+
+/* ─── Navbar underline link ──────────────────────────────── */
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* ─── Floating hero badge ────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.float-badge { animation: float 3.5s ease-in-out infinite; }
+
+/* ─── Stats counter shine ────────────────────────────────── */
+@keyframes shine {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+.stat-number {
+  background: linear-gradient(90deg, #F97316, #FBBF24, #F97316);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
+/* ─── Noise texture overlay ──────────────────────────────── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ─── Team avatar ring ───────────────────────────────────── */
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.avatar-ring {
+  background: conic-gradient(from 0deg, #F97316, #FBBF24, #F97316, transparent 60%);
+  animation: ring-spin 4s linear infinite;
+}
+
+/* ─── Smooth button default ──────────────────────────────── */
+button { transition: all 0.3s ease; }
+img    { max-width: 100%; height: auto; }
