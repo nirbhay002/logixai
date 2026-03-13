@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedX from "./AnimatedX";
 
 const STATS = [
   { number: "500+", label: "Students Enrolled" },
@@ -30,6 +31,11 @@ export default function HeroSection() {
         <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-orange-600/10 blur-[120px]" />
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-orange-500/8 blur-[100px]" />
         <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] rounded-full bg-amber-500/6 blur-[80px]" />
+      </div>
+
+      {/* Animated X background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
+        <AnimatedX />
       </div>
 
       {/* ── Main content ── */}

@@ -17,7 +17,7 @@ export default function Home() {
       <TeamSection />
       <CTASection />
       <Footer />
-      <AnimatedX />
+      {/* <AnimatedX /> */}
     </main>
   );
 }
