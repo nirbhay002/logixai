@@ -51,8 +51,16 @@ const TEAM: Member[] = [
     institute: "IIT Delhi",
     role:      "Research & Development",
     img:       "/team/abhishek.jpg",
-    initials:  "LD",
+    initials:  "AP",
     gradient:  "from-rose-500 to-pink-400",
+  },
+  {
+  name:      "Abhishek Singh",
+  institute: "IIT Delhi",
+  role:      "Chief Strategy & Innovation Officer",
+  img:       "/team/abhisingh.jpg",
+  initials:  "AS",
+  gradient:  "from-yellow-500 to-orange-400",
   },
 ];
 
