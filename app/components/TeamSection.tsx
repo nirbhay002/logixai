@@ -33,7 +33,7 @@ const TEAM: Member[] = [
   {
     name:      "Arun Kumar",
     institute: "IIT Jodhpur",
-    role:      "Curriculum Lead",
+    role:      "Chief Technology Officer (CTO)",
     img:       "/team/arun.jpg",
     initials:  "AK",
     gradient:  "from-violet-500 to-purple-400",
@@ -41,7 +41,7 @@ const TEAM: Member[] = [
   {
     name:      "Shubham Singh",
     institute: "IIIT Lucknow",
-    role:      "Technology Lead",
+    role:      "Chief Curriculum Officer",
     img:       "/team/shubham.jpg",
     initials:  "SS",
     gradient:  "from-emerald-500 to-teal-400",
@@ -49,14 +49,14 @@ const TEAM: Member[] = [
   {
     name:      "Abhishek Pratap",
     institute: "IIT Delhi",
-    role:      "Research & Development",
+    role:      "Director of Research & Innovation",
     img:       "/team/abhishek.jpg",
     initials:  "AP",
     gradient:  "from-rose-500 to-pink-400",
   },
   {
   name:      "Abhishek Singh",
-  institute: "IIT Delhi",
+  institute: "IIIT Lucknow",
   role:      "Chief Strategy & Innovation Officer",
   img:       "/team/abhisingh.jpg",
   initials:  "AS",
