@@ -41,7 +41,7 @@ const TEAM: Member[] = [
   {
     name:      "Shubham Singh",
     institute: "IIIT Lucknow",
-    role:      "Chief Curriculum Officer",
+    role:      "Director of Learning Experience & Content Design",
     img:       "/team/shubham.jpg",
     initials:  "SS",
     gradient:  "from-emerald-500 to-teal-400",
