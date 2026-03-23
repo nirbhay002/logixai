@@ -17,7 +17,7 @@ const TEAM: Member[] = [
   {
     name:      "Aryesh Rai",
     institute: "IIT Delhi",
-    role:      "Co-Founder & Lead Mentor",
+    role:      "Chief Learning Officer",
     img:       "/team/aryesh.jpg",
     initials:  "AR",
     gradient:  "from-orange-500 to-amber-400",
@@ -25,7 +25,7 @@ const TEAM: Member[] = [
   {
     name:      "Nirbhay Gupta",
     institute: "IIT Delhi",
-    role:      "Co-Founder & Academic Head",
+    role:      "Chief Academic Head",
     img:       "/team/nirbhay.jpg",
     initials:  "NG",
     gradient:  "from-blue-500 to-indigo-400",
