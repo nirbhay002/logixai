@@ -105,7 +105,7 @@ function MemberCard({ member, delay }: { member: Member; delay: number }) {
       </h3>
 
       {/* Role */}
-      <p className="text-xs text-gray-400 mb-2 font-medium">{member.role}</p>
+      {/* <p className="text-xs text-gray-400 mb-2 font-medium">{member.role}</p> */}
 
       {/* Institute badge */}
       <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full
