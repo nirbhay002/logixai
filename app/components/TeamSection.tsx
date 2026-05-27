@@ -7,7 +7,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 type Member = {
   name: string;
   institute: string;
-  role: string;
+  // role: string;
   img: string;
   initials: string;
   gradient: string;
@@ -17,7 +17,7 @@ const TEAM: Member[] = [
   {
     name:      "Aryesh Rai",
     institute: "IIT Delhi",
-    role:      "Chief Learning Officer",
+    // role:      "Chief Learning Officer",
     img:       "/team/aryesh.jpg",
     initials:  "AR",
     gradient:  "from-orange-500 to-amber-400",
@@ -25,7 +25,7 @@ const TEAM: Member[] = [
   {
     name:      "Nirbhay Gupta",
     institute: "IIT Delhi",
-    role:      "Chief Academic Head",
+    // role:      "Chief Academic Head",
     img:       "/team/nirbhay.jpg",
     initials:  "NG",
     gradient:  "from-blue-500 to-indigo-400",
@@ -33,7 +33,7 @@ const TEAM: Member[] = [
   {
     name:      "Arun Kumar",
     institute: "IIT Jodhpur",
-    role:      "Chief Technology Officer (CTO)",
+    // role:      "Chief Technology Officer (CTO)",
     img:       "/team/arun.jpg",
     initials:  "AK",
     gradient:  "from-violet-500 to-purple-400",
@@ -49,7 +49,7 @@ const TEAM: Member[] = [
   {
     name:      "Abhishek Pratap",
     institute: "IIT Delhi",
-    role:      "Director of Research & Innovation",
+    // role:      "Director of Research & Innovation",
     img:       "/team/abhishek.jpg",
     initials:  "AP",
     gradient:  "from-rose-500 to-pink-400",
@@ -57,7 +57,7 @@ const TEAM: Member[] = [
   {
   name:      "Abhishek Singh",
   institute: "IIIT Lucknow",
-  role:      "Chief Strategy & Innovation Officer",
+  // role:      "Chief Strategy & Innovation Officer",
   img:       "/team/abhisingh.jpg",
   initials:  "AS",
   gradient:  "from-yellow-500 to-orange-400",
