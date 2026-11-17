@@ -5,11 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const LINKS = [
-  { label: "Home",     href: "/" },
-  { label: "About",    href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Team",     href: "#team" },
-  { label: "Contact",  href: "#contact" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+  { label: "Editor", href: "/problems" },
 ];
 
 export default function Navbar() {
@@ -26,15 +27,21 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-4
         flex justify-between items-center transition-all duration-400
-        ${scrolled
-          ? "bg-black/85 backdrop-blur-xl shadow-[0_2px_32px_rgba(0,0,0,0.5)] border-b border-white/[0.06]"
-          : "bg-transparent"
+        ${
+          scrolled
+            ? "bg-black/85 backdrop-blur-xl shadow-[0_2px_32px_rgba(0,0,0,0.5)] border-b border-white/[0.06]"
+            : "bg-transparent"
         }`}
     >
       {/* ── Logo ── */}
       <Link href="/" className="flex items-center gap-3 group">
         <div className="relative w-10 h-10 rounded-xl overflow-hidden ring-1 ring-white/10 group-hover:ring-orange-500/40 transition-all duration-300">
-          <Image src="/logo.png" alt="LogixAI Logo" fill className="object-contain" />
+          <Image
+            src="/logo.png"
+            alt="LogixAI Logo"
+            fill
+            className="object-contain"
+          />
         </div>
         <span className="text-xl font-bold text-white tracking-tight">
           Logi
@@ -75,7 +82,13 @@ export default function Navbar() {
       >
         Get Started
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M1 7h12M7 1l6 6-6 6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </Link>
 
@@ -85,9 +98,15 @@ export default function Navbar() {
         className="md:hidden w-9 h-9 flex flex-col justify-center items-center gap-1.5"
         aria-label="Toggle menu"
       >
-        <span className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
-        <span className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 w-0" : "w-4"}`} />
-        <span className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
+        <span
+          className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`}
+        />
+        <span
+          className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 w-0" : "w-4"}`}
+        />
+        <span
+          className={`block h-0.5 bg-white transition-all duration-300 ${menuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`}
+        />
       </button>
 
       {/* ── Mobile menu ── */}
